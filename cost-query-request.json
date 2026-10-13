@@ -1,0 +1,24 @@
+{
+  "method": "POST",
+  "path": "/subscriptions/{subscriptionId}/providers/Microsoft.CostManagement/query",
+  "apiVersion": "2023-11-01",
+  "body": {
+    "type": "ActualCost",
+    "timeframe": "MonthToDate",
+    "dataset": {
+      "granularity": "None",
+      "aggregation": {
+        "totalCost": {
+          "name": "Cost",
+          "function": "Sum"
+        }
+      },
+      "grouping": [
+        {
+          "type": "Dimension",
+          "name": "ResourceGroup"
+        }
+      ]
+    }
+  }
+}
